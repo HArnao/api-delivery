@@ -9,7 +9,7 @@ public class Order {
 
     private String customerName;
 
-    private String getCustomerName;
+    private String customerEmail;
 
     private String status;
 
@@ -19,15 +19,17 @@ public class Order {
 
     private List<Food> items;
 
-    public Order(String id, String customerName, String getCustomerName, List<Food> items) {
+    public Order(String id, String customerName, String customerEmail, List<Food> items) {
         this.id = id;
         this.customerName = customerName;
-        this.getCustomerName = getCustomerName;
+        this.customerEmail = customerEmail;
         this.items = items;
         this.status = "confirmado";
         this.creationTime = LocalDateTime.now();
         this.estimatedDeliveryTime = this.creationTime.plusMinutes(30);
     }
+
+    public Order(){}
 
     public String getId() {
         return id;
@@ -45,12 +47,12 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public String getGetCustomerName() {
-        return getCustomerName;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public void setGetCustomerName(String getCustomerName) {
-        this.getCustomerName = getCustomerName;
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
 
     public String getStatus() {
