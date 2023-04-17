@@ -2,12 +2,14 @@ package com.delivery.apidelivery.services;
 
 import com.delivery.apidelivery.entities.Order;
 import com.delivery.apidelivery.entities.OrderRequest;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class OrderService {
     private List<Order> orders = new ArrayList<>();
 
@@ -17,7 +19,7 @@ public class OrderService {
         //Asignamos los valores del pedido del cliente
         order.setId(UUID.randomUUID().toString());
         order.setCustomerName(orderRequest.getCustomerName());
-        order.setCustomerEmail(orderRequest.getGetCustomerEmail());
+        order.setCustomerEmail(orderRequest.getCustomerEmail());
         order.setStatus("En proceso");
         order.setCreationTime(LocalDateTime.now());
         order.setEstimatedDeliveryTime(LocalDateTime.now().plusMinutes(30));

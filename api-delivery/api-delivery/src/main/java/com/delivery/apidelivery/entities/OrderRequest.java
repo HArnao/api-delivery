@@ -5,13 +5,13 @@ import java.util.List;
 public class OrderRequest {
     private String customerName;
 
-    private String getCustomerEmail;
+    private String CustomerEmail;
 
     private List<Food> items;
 
     public OrderRequest(String customerName, String getCustomerEmail, List<Food> items) {
         this.customerName = customerName;
-        this.getCustomerEmail = getCustomerEmail;
+        this.CustomerEmail = getCustomerEmail;
         this.items = items;
     }
 
@@ -23,12 +23,12 @@ public class OrderRequest {
         this.customerName = customerName;
     }
 
-    public String getGetCustomerEmail() {
-        return getCustomerEmail;
+    public String getCustomerEmail() {
+        return CustomerEmail;
     }
 
-    public void setGetCustomerEmail(String getCustomerEmail) {
-        this.getCustomerEmail = getCustomerEmail;
+    public void setCustomerEmail(String getCustomerEmail) {
+        this.CustomerEmail = getCustomerEmail;
     }
 
     public List<Food> getItems() {
