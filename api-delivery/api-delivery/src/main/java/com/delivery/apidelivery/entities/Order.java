@@ -19,6 +19,8 @@ public class Order {
 
     private List<Food> items;
 
+    private double total;
+
     public Order(String id, String customerName, String customerEmail, List<Food> items) {
         this.id = id;
         this.customerName = customerName;
@@ -27,9 +29,19 @@ public class Order {
         this.status = "confirmado";
         this.creationTime = LocalDateTime.now();
         this.estimatedDeliveryTime = this.creationTime.plusMinutes(30);
+        this.total= getTotal();
     }
 
     public Order(){}
+
+    //Metodo para obtener el total de la orden
+    public double getTotal() {
+        double total = 0;
+        for (Food item : items) {
+            total += item.getPrice();
+        }
+        return total;
+    }
 
     public String getId() {
         return id;

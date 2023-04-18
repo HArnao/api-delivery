@@ -3,8 +3,10 @@ package com.delivery.apidelivery.controller;
 import com.delivery.apidelivery.entities.Food;
 import com.delivery.apidelivery.entities.OrderRequest;
 import com.delivery.apidelivery.services.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.delivery.apidelivery.entities.Order;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,6 +53,7 @@ public class OrderController {
     }
 
     //URL cambiar el estado del pedido por el id
+    @PutMapping("/{id}/actualEs")
     public ResponseEntity<Order> updateOrder(@PathVariable String id, @RequestBody Order order){
         Order order1 = orderService.buscarId(id);
         if(order1 == null){
